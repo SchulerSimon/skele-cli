@@ -33,10 +33,11 @@ def main():
 
     # Here we'll try to dynamically match the command the user is trying to run
     # with a pre-defined command class we've already created.
-    for (k, v) in options.items(): 
-        if hasattr(skele.commands, k) and v:
-            module = getattr(skele.commands, k)
-            skele.commands = getmembers(module, isclass)
-            command = [command[1] for command in skele.commands if command[0] != 'Base'][0]
+    for (k, v) in options.items():
+        if hasattr(unchained.commands, k) and v:
+            module = getattr(unchained.commands, k)
+            unchained.commands = getmembers(module, isclass)
+            command = [c for c in unchained.commands if
+                       c[0].lower() == k.lower()][0][1]
             command = command(options)
             command.run()

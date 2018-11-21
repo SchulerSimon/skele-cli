@@ -4,6 +4,8 @@ skele-cli
 *A skeleton command line program in Python.*
 
 
+**THIS IS A FORK FROM https://github.com/rdegges/skele-cli THAT SOLVES https://github.com/rdegges/skele-cli/issues/17**
+
 Purpose
 -------
 
